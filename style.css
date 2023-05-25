@@ -1,0 +1,277 @@
+/* note- tested with Chrome on Laptop */
+
+html {
+  box-sizing: border-box;
+  }
+
+body {
+  line-height: 1.4;
+}
+
+.btn {
+  color: var(--light);
+  padding: -5.4rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
+
+.logo{
+padding-left: 68px;
+height: 80px;
+}
+
+.brandname{
+  vertical-align: baseline;
+}
+
+.brandname h1{
+  padding-left: 54px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+img {
+  max-width: 100%;
+}
+
+/* Navigation */
+.nav_bar {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+  color: white;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 4px;
+  background-color: #140f0c;
+}
+
+.main-nav a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: white;
+  
+ }
+
+.main-nav a:hover {
+  text-decoration: none;
+}
+
+/* Top Container */
+.top-container {
+  display: grid;
+    /* Grid Gap */
+  grid-gap: 20px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+/* Showcase */
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background: url(./media/michaela-baum-VnM6_liIRJ0-unsplash.jpg); /*https://unsplash.com/photos/VnM6_liIRJ0*/
+  background-size: cover;
+  background-position: center;
+  opacity: 0.89;
+  padding: 3rem;
+    
+    /* Flexbox is occurring inside of  Grid Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  color: white;
+}
+
+.showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+  color: white;
+}
+
+.showcase h2{
+  font-size: 2rem;
+}
+
+.showcase p {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: var(--light);
+  color: white;
+}
+
+.showcase a {
+  font-size: 1.2rem;
+}
+
+.btn{
+  font-size: 1.5rem;
+}
+
+/* Top Box */
+.top-box {
+  background: var(--primary);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  color: white;
+}
+
+.top-box .price {
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box h2{
+  font-size: 2rem;
+}
+.cakes{
+  background-image: url(./media/cake.jpg);
+  background-size: cover;
+  opacity: 0.85;
+}
+
+.pastry{
+  background-image: url(./media/pastry.jpg);
+  background-size: cover;
+  opacity: 0.96;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+p{
+  text-align: justify;
+}
+
+/* speciality */
+.speciality {
+  display: grid;
+  grid-gap: 20px;
+    
+/* demonstrate the use of fr, auto and % */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.speciality_list {
+  padding: 1.5rem 2rem;
+  text-align: justify;
+  text-align: center;
+ }
+
+/* Info */
+.info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0rem 2rem 0rem 2rem;;
+}
+
+.info p{
+  font-size: 1.2rem;
+}
+
+/* worked_with */
+.worked_with {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.worked_with img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.workedwith{
+text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #140f0c;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+  align-items: flex-end;
+  color: white;
+}
+
+footer .logo{
+  padding-left: 0px;
+}
+footer p {
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      'showcase showcase'
+      'top-box-a top-box-b';
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+ 
+  .logo{
+    padding-left: 26px;
+    }
+
+  .info {
+    grid-template-columns: 1fr;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+  footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+
+  .worked_with img {
+    width: 60%;
+    padding-left: 44px;
+  }
+}
